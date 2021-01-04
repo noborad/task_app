@@ -1,0 +1,28 @@
+<h2>スケジュール新規作成</h2>
+
+<%= form_for @task do |f| %>
+    <table>
+        <tr>
+            <th><%= f.label :title, "タイトル" %></th>
+            <td align="center"><%= f.text_area :title %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :start, "開始日" %></th>
+            <td align="center"><%= f.date_field :start %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :finish, "終了日" %></th>
+            <td align="center"><%= f.date_field :finish %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :day, "終日" %></th>
+            <td align="center"><%= f.check_box :day %><p>終日の場合はチェックを入れてください</p></td>
+        </tr>
+    </table>
+    <div>
+        <ul>
+            <li><%= f.submit "登録完了する" %></li>
+            <li><%= link_to "スケジュール一覧に戻る", :tasks %></li>
+        </ul>
+    </div>
+<% end %>
